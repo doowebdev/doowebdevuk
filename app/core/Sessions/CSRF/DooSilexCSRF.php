@@ -6,7 +6,7 @@
  * Time: 19:35
  */
 
-namespace Doowebdev\Core\Sessions\CSRF;
+namespace Doowebdev\Core\Sessions\Csrf;
 
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
  * Class DooSession
  * @package Doowebdev\Core\Sessions
  */
-class DooSilexCSRF {
+class DooSilexCsrf {
 
     /**
      * @var Session
@@ -26,7 +26,7 @@ class DooSilexCSRF {
     public function __construct()
     {
         $this->session = new Session();
-        $this->_generateCSRFToken();
+        $this->generateCsrfToken();
     }
 
     /**
@@ -43,7 +43,7 @@ class DooSilexCSRF {
      */
     public function checkCsrf()
     {
-        return $this->_checkToken( htmlspecialchars( $_POST['token'] ) );
+        return $this->checkToken( htmlspecialchars( $_POST['token'] ) );
     }
 
 
@@ -130,7 +130,7 @@ class DooSilexCSRF {
     /**
      * Generate Token for CSRF - private
      */
-    private function _generateCSRFToken()
+    private function generateCsrfToken()
     {
         $this->session->set('token', md5( uniqid() ) );
     }
@@ -140,7 +140,7 @@ class DooSilexCSRF {
      * @param $token
      * @return bool
      */
-    private function _checkToken( $token )
+    private function checkToken( $token )
     {
         $token_name = 'token';
         $this->sessionExists( $token_name );
@@ -151,14 +151,5 @@ class DooSilexCSRF {
         }
         return false;
     }
-
-
-
-
-
-
-
-
-
 
 }
