@@ -62,7 +62,6 @@ class Upload {
     {
         if( !is_dir( $uploadFolder ) || !chmod( $uploadFolder, 0755) )
         {
-            //throw new \Exception("$uploadFolder must be a valid writable folder.");
             throw new UploadException("$uploadFolder must be a valid writable folder.");
         }
 
@@ -82,8 +81,6 @@ class Upload {
         $serverMax = self::convertToBytes( ini_get('upload_max_filesize') );
        if( $bytes > $serverMax )
        {
-         //  throw new \Exception('Maximum size cannot exceed sever limit for individual files: ' .
-        //  self::convertFromBytes( $serverMax ) );
            throw new UploadException('Maximum size cannot exceed sever limit for individual files: ' .
                self::convertFromBytes( $serverMax ) );
        }
@@ -328,11 +325,4 @@ class Upload {
         }
     }
 
-
-
-
-
-
-
-
-} 
+}

@@ -27,7 +27,6 @@ class SentryRepository implements AuthRepositoryInterface {
      */
     public function check()
     {
-       // return'check';
         return Sentry::check();
     }
 

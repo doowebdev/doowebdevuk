@@ -2,7 +2,6 @@
 
 namespace Doowebdev\Core\Validator\Core;
 
-//use DooRepositories\FormValidation\Database;
 
 /**
  * Class FormValidation

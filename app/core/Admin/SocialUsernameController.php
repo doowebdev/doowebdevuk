@@ -44,4 +44,4 @@ class SocialUsernameController extends Admin{
         return '';
     }
 
-} 
+}

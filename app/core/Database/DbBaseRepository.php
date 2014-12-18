@@ -129,13 +129,11 @@ abstract class DbBaseRepository implements DbBaseRepositoryInterface{
     public function rssDesc()
     {
         return $this->model->orderBy('created_at', 'desc')->get();
-        //return $this->cache( 'rssDesc', $rssDesc );
     }
 
     public function sitemapItem()
     {
         return $this->model->orderBy('created_at', 'desc')->get();
-        //return $this->cache( 'rssDesc', $rssDesc );
     }
 
     public function whereWhere( $field, $value, $field2, $value2 )
@@ -167,7 +165,6 @@ abstract class DbBaseRepository implements DbBaseRepositoryInterface{
         else
         {
             $this->model->truncate();
-         //   echo $flash_msg_name.' updated.';
             return $this->model->create($createArray);
         }
     }

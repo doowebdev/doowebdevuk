@@ -11,7 +11,7 @@ namespace Doowebdev\Controllers;
 
 use Doowebdev\Core\Base\Front;
 use Symfony\Component\HttpFoundation\JsonResponse;
-//use Symfony\Component\HttpFoundation\Request;
+
 
 class PostController extends Front
 {
@@ -32,7 +32,6 @@ class PostController extends Front
 
     public function store()
     {
-        //$request = Request::createFromGlobals();
         $nameRequest = $this->input->request->get('name');
 
         return '$nameRequest: '.$nameRequest;

@@ -7,7 +7,7 @@ $app['translator'] = $app->share( $app->extend('translator',
      * @param $app
      * @return mixed
      */
-    function( $translator, $app ) {
+    function(\Symfony\Component\Translation\Translator $translator, $app ) {
 
         $translator->addLoader('php', new \Symfony\Component\Translation\Loader\PhpFileLoader());
 

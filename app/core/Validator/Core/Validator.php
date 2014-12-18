@@ -118,7 +118,7 @@ class Validator {
      * @param $satisfier
      * @return bool
      */
-    protected function required( $field, $value, $satisfier )
+    protected function required( $value )
     {
         $trim_value = trim($value);
         return !empty( $trim_value );
@@ -130,7 +130,7 @@ class Validator {
      * @param $satisfier
      * @return bool
      */
-    protected function minlength( $field, $value, $satisfier )
+    protected function minlength( $value, $satisfier )
     {
         return mb_strlen( $value ) >= $satisfier;
     }
@@ -141,7 +141,7 @@ class Validator {
      * @param $satisfier
      * @return bool
      */
-    protected function maxlength( $field, $value, $satisfier )
+    protected function maxlength( $value, $satisfier )
     {
         return mb_strlen( $value ) <= $satisfier;
     }
@@ -152,7 +152,7 @@ class Validator {
      * @param $satisfier
      * @return mixed
      */
-    protected function email( $field, $value, $satisfier )
+    protected function email( $value )
     {
         return filter_var( $value, FILTER_VALIDATE_EMAIL );
     }
@@ -163,7 +163,7 @@ class Validator {
      * @param $satisfier
      * @return bool
      */
-    protected function alphanumeric( $field, $value, $satisfier )
+    protected function alphanumeric( $value )
     {
         return ctype_alnum( $value );
     }
@@ -174,7 +174,7 @@ class Validator {
      * @param $satisfier
      * @return bool
      */
-    protected function match( $field, $value, $satisfier )
+    protected function match( $value, $satisfier )
     {
         return $value === $this->items[ $satisfier ];
     }
@@ -198,7 +198,7 @@ class Validator {
      * @param $satisfier
      * @return bool
      */
-    protected function yt_vimeo($field, $value, $satisfier)
+    protected function ytVimeo($value )
     {
         $clean_url    = trim( $value );
         $ex_video_url = explode('/', $clean_url);

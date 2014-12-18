@@ -30,10 +30,10 @@
     "doowebdev/doo-pagination": "1.*",
     "symfony/browser-kit": ">=2.3,<2.4-dev",
     "symfony/css-selector": ">=2.3,<2.4-dev",
-    "halilim/xml-iterator": "dev-master",
+    "halilim/xml-iterator": "~1.0.0",
     "suin/php-rss-writer": ">=1.0",
-    "evert/sitemap-php": "dev-master",
-    "recaptcha/php5": "dev-master"
+    "evert/sitemap-php": "~1.1.0",
+    "recaptcha/php5": "~1.1.0"
 
   },
 
