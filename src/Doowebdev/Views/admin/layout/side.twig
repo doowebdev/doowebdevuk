@@ -1,0 +1,67 @@
+<!-- Sidebar -->
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="sidebar-dropdown"><a href="#">Navigation</a></div>
+
+    <!--- Sidebar navigation -->
+    <!-- If the main navigation has sub navigation, then add the class "has_sub" to "li" of main navigation. -->
+    <ul id="nav">
+        <!-- Main menu with font awesome icon -->
+        <li>
+            <a href="{{ url('home') }}admin-area/dashboard" class="open"><i class="fa fa-tachometer"></i>  {{ 'DASHBOARD_MENU'|trans }}</a>
+        </li>
+        <li class="has_sub"><a href="#"><i class="fa fa-cogs"></i> {{ 'GENERAL_SETTINGS_MENU'|trans }}  <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+            <ul>
+                <li><a href="{{ url('home') }}admin-area/settings">{{ 'SETTINGS_LINK'|trans }}</a></li>
+                <li><a href="{{ url('home') }}admin-area/site-details">{{ 'SITE_META_LINK'|trans }}</a></li>
+                <li><a href="{{ url('home') }}admin-area/ad-boxes">{{ 'ADS_LINK'|trans }}</a></li>
+                <li><a href="{{ url('home') }}admin-area/upload-logo">{{ 'UPLOAD_LINK'|trans }}</a></li>
+                <li><a href="{{ url('home') }}admin-area/sitemap">{{ 'SITEMAP_LINK'|trans }}</a></li>
+                <li><a href="{{ url('home') }}admin-area/social-username">{{ 'SOCIAL_MEDIA_USERNAME_LINK'|trans }}</a></li>
+                <li><a href="{{ url('home') }}admin-area/social-keys">{{ 'SOCIAL_MEDIA_KEYS_LINK'|trans }}</a></li>
+            </ul>
+        </li>
+        <li class="has_sub"><a href="#"><i class="fa fa-file-text"></i> {{ 'PAGES_MENU'|trans }}  <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+            <ul>
+                <li><a href="{{ url('home') }}admin-area/page">{{ 'CREATE_PAGE_LINK'|trans }}</a></li>
+                <li><a href="{{ url('home') }}admin-area/pages">{{ 'VIEW_PAGES_LINK'|trans }}</a></li>
+            </ul>
+        </li>
+        <li class="has_sub"><a href="#"><i class="fa fa-users"></i> {{ 'USERS_MENU'|trans }}  <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+            <ul>
+                <li><a href="{{ url('home') }}admin-area/user">{{ 'CREATE_USER_LINK'|trans }}</a></li>
+                <li><a href="{{ url('home') }}admin-area/users">{{ 'VIEW_USERS_LINK'|trans }}</a></li>
+            </ul>
+        </li>
+        <li class="has_sub"><a href="#"><i class="fa fa-file-text"></i> {{ 'PORTFOLIO_MENU'|trans }} <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+            <ul>
+                <li><a href="{{ url('home') }}admin-area/create-portfolio">{{ 'CREATE_PORTFOLIO_LINK'|trans }}</a></li>
+                <li><a href="{{ url('home') }}admin-area/portfolio">{{ 'VIEW_PORTFOLIOS_LINK'|trans }}</a></li>
+                <li><a href="{{ url('home') }}admin-area/create-portfolio-category">{{ 'CREATE_CATEGORY_LINK'|trans }}</a></li>
+                <li><a href="{{ url('home') }}admin-area/categories">{{ 'VIEW_CATEGORIES_LINK'|trans }}</a></li>
+            </ul>
+        </li>
+        <li class="has_sub"><a href="#"><i class="fa fa-file-text"></i> {{ 'ENVATO_MENU'|trans }}  <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+            <ul>
+                <li><a href="{{ url('home') }}admin-area/codecanyon-items">{{ 'VIEW_ITEMS_LINK'|trans }}</a></li>
+                <li><a href="{{ url('home') }}admin-area/import">{{ 'IMPORT_ITEMS_LINK'|trans }}</a></li>
+            </ul>
+        </li>
+        <!--<li class="has_sub"><a href="#"><i class="fa fa-shopping-cart"></i>Commission Junction  <span class="pull-right"><i class="icon-chevron-right"></i></span></a>
+            <ul>
+                <li><a href="{{ url('home') }}admin-area/homepage">Add Home Page Content</a></li>
+                <li><a href="{{ url('home') }}admin-area/cj-settings">CJ API Setting</a></li>
+                <li><a href="{{ url('home') }}admin-area/import-items">Import CJ Items</a></li>
+               <!-- <li><a href="{{ url('home') }}admin-area/items">View Items</a></li>
+                <li><a href="{{ url('home') }}admin-area/advertisers">View Advertisers</a></li>
+                <li><a href="{{ url('home') }}admin-area/categories">View Categories</a></li>
+                <li><a href="{{ url('home') }}admin-area/brands">View Brands/Manufacturers</a></li>
+            </ul>
+        </li>-->
+
+    </ul>
+</div>
+
+<!-- Sidebar ends -->
+
+<!-- Sidebar ends -->

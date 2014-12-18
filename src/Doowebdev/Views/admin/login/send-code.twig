@@ -1,0 +1,27 @@
+{% extends "admin/layout/master-login.twig" %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col 5">
+                <form role="form" class ="admin-ajaxv login-form form-horizontal" action="{{ siteUrl('/forgotten') }}" method ="post">
+                    <h3>{{ 'RESET_PASSWORD_MAIN_TITLE'|trans }}</h3>
+
+                    <div class="form-group">
+                        <label>{{ 'RESET_EMAIL_TITLE'|trans }}</label>
+                        <input type="text" name="email" class="form-control"/> <br/>
+                    </div>
+
+                    <input type="hidden" name="token" value="{{ token }}">
+                    <input type="submit" name="send_submit" value="{{ 'SUBMIT_REQUEST_TITLE'|trans }}" class="btn btn-primary" />
+
+                    <p>{{ message }}</p>
+                    <p>{{ flash['resetCode-msg'] }}</p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

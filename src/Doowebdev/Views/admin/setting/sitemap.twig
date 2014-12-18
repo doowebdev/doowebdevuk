@@ -1,0 +1,145 @@
+{% extends "admin/layout/master.twig" %}
+
+{% block content %}
+
+    <!-- Main bar -->
+    <div class="mainbar">
+
+        <!-- Page heading -->
+        <div class="page-head">
+            <h2 class="pull-left"><i class="fa fa-home"></i> Settings</h2>
+
+            <div class="clearfix"></div>
+
+        </div>
+        <!-- Page heading ends -->
+
+
+        <!-- Matter -->
+
+        <div class="matter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                         {% if siteMapGeneratedMsg %}
+                            {% for msg in  siteMapGeneratedMsg %}
+                                {{ msg.content }}
+                            {% endfor %}
+                        {% endif %}
+
+                        {% if siteMapUpdatedMsg %}
+                            {% for msg in siteMapUpdatedMsg %}
+                                {{ msg.content }}
+                            {% endfor %}
+                        {% endif %}
+
+                        {% for formMsg in adminFormErrorMessages %}
+                            <ul>
+                                {% if formMsg.item_priority %}<li>{{ formMsg.item_priority }}</li>{% endif %}
+                                {% if formMsg.item_frequency %}<li>{{ formMsg.item_frequency }}</li>{% endif %}
+                                {% if formMsg.page_priority %}<li>{{ formMsg.page_priority }}</li>{% endif %}
+                                {% if formMsg.page_frequency %}<li>{{ formMsg.page_frequency }}</li>{% endif %}
+                            </ul>
+                        {% endfor %}
+
+                        <div class="widget">
+                            <div class="widget-head">
+                                <div class="pull-left">Sitemap Settings</div>
+                                <div class="widget-icons pull-right">
+                                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                                    <!--<a href="#" class="wclose"><i class="fa fa-times"></i></a>-->
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="widget-content">
+                                <div class="padd">
+
+                                    <!-- Content -->
+
+                                    <p><b>Site map url:</b> http://YOUR-SITE-URL/app/storage/sitemap/sitemap.xml</p>
+
+                                    <br />
+                                    <!-- Form starts.  -->
+                                    <form class="admin-ajax form-horizontal" role="form" action="{{ url('siteMap') }}" method ="post">
+
+                                        <b>Item</b>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Priority:</label>
+                                            <div class="col-lg-5">
+                                                <input type="text" class="form-control" name ="item_priority" value ="{% if item_priority %}{{ item_priority }}{% endif %}">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Frequency:</label>
+                                            <div class="col-lg-5">
+                                                <input type="text" class="form-control" name ="item_frequency" value ="{% if item_frequency %}{{ item_frequency }}{% endif %}">
+
+                                            </div>
+                                        </div>
+
+                                        <b>PAGES</b>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Priority:</label>
+                                            <div class="col-lg-5">
+                                                <input type="text" class="form-control" name ="page_priority" value ="{% if page_priority %}{{ page_priority }}{% endif %}">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Frequency:</label>
+                                            <div class="col-lg-5">
+                                                <input type="text" class="form-control" name ="page_frequency" value ="{% if page_frequency %}{{ page_frequency }}{% endif %}">
+
+                                            </div>
+
+                                            <input type="hidden" name="token" value="{{ token }}">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label"></label>
+                                            <div class="col-lg-5">
+                                                <p><input type="submit" value ="1. Submit Sitemap Settings" name ="sitemap_settings_submit" class="btn btn-primary"></p>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                    <!--Generate -->
+                                    <form class="admin-ajaxv" action="{{ url('generate') }}" method ="post">
+                                        <input type="hidden" name="token" value="{{ token }}">
+                                        <input type="submit" value ="2. Generate Sitemap" name ="sitemap_submit" class="btn btn-default">
+                                    </form>
+                                    <!-- / Generate -->
+                                    <!-- End content -->
+
+                                </div>
+                                <div class="widget-foot">
+                                    <!-- Footer goes here -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matter ends -->
+
+    </div>
+
+    <!-- Mainbar ends -->
+    <div class="clearfix"></div>
+
+    </div>
+    <!-- Content ends -->
+
+{% endblock %}
+
+{% block sidebar %}
+    {% include "admin/layout/side.twig" %}
+{% endblock  %}

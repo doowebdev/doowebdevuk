@@ -1,0 +1,130 @@
+{% extends "admin/layout/master.twig" %}
+
+{% block content %}
+<!-- Main bar -->
+<div class="mainbar">
+
+    <!-- Page heading -->
+    <div class="page-head">
+        <h2 class="pull-left"><i class="fa fa-home"></i> {{ 'GENERAL_SETTINGS'|trans }}</h2>
+
+        <div class="clearfix"></div>
+
+    </div>
+    <!-- Page heading ends -->
+
+
+    <!-- Matter -->
+
+    <div class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                     {% if adsMsg %}
+                        {% for msg in  adsMsg %}
+                            {{ msg.content }}
+                        {% endfor %}
+                    {% endif %}
+
+                    <div class="widget">
+                        <div class="widget-head">
+                            <div class="pull-left">{{ 'ADVERTISE_BOXES_MAIN_TITLE'|trans }}</div>
+                            <div class="widget-icons pull-right">
+                                <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                                <!--<a href="#" class="wclose"><i class="fa fa-times"></i></a>-->
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="widget-content">
+                            <div class="padd">
+
+                                <!-- Content -->
+                                <div class="widget-content">
+                                    <div class="padd">
+
+                                        <br />
+                                        <!-- Form starts.  -->
+                                        <form class="admin-ajax form-horizontal" role="form" action="{{ url('adBoxes') }}" method ="post">
+
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">{{ 'TOP_AD_SPACE_TITLE'|trans }}</label>
+                                                <div class="col-lg-5">
+                                                   <!-- <?php if( !empty( $advertisement->top_ad ) ) : ?>-->
+                                                    <textarea class="form-control" name="top_ad" id="top_ad" cols="30" rows="10">{% if advertisement.top_ad %} {{ advertisement.top_ad|trim }}{% endif %}</textarea>
+                                                    <!--<?php else : ?>
+                                                    <textarea class="form-control" name="top_ad" id="top_ad" cols="30" rows="10"></textarea>
+                                                    <?php endif; ?>-->
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">{{ 'BOTTOM_AD_SPACE_TITLE'|trans }}</label>
+                                                <div class="col-lg-5">
+                                                    <!--php if( !empty( $advertisement->bottom_ad ) ) : ?>-->
+                                                    <textarea class="form-control" name="bottom_ad" id="bottom_ad" cols="30" rows="10">{% if advertisement.bottom_ad %} {{ advertisement.bottom_ad|trim }}{% endif %}</textarea>
+                                                    <!--<?php else : ?>
+                                                    <textarea class="form-control" name="bottom_ad" id="bottom_ad" cols="30" rows="10"></textarea>
+                                                    <?php endif; ?>-->
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">{{ 'SIDE_AD_SPACE_TITLE'|trans }}</label>
+                                                <div class="col-lg-5">
+                                                    <!--<?php if( !empty( $advertisement->side_box_ad ) ) : >-->
+                                                    <textarea class="form-control" name="side_ad" id="side_ad" cols="30" rows="10">{% if advertisement.side_ad %} {{ advertisement.side_ad|trim }}{% endif %}</textarea>
+                                                   <!-- <?php else : ?>
+                                                    <textarea class="form-control" name="box_ad" id="box_ad" cols="30" rows="10"></textarea>
+                                                    <?php endif; ?>-->
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label"></label>
+                                                <div class="col-lg-5">
+                                                    <!--<?php if( !empty( $advertisement->side_ad ) ) : ?>-->
+                                                   <!-- <textarea class="form-control" name="side_ad" id="side_ad" cols="30" rows="10"></textarea>-->
+                                                    <!--<?php else : ?>
+                                                    <textarea class="form-control" name="side_ad" id="side_ad" cols="30" rows="10"></textarea>
+                                                    <?php endif; ?>-->
+
+                                                    <input type="hidden" name="token" value="{{ token }}">
+                                                    <p><input type="submit" value ="{{ 'AD_SUBMIT_TITLE'|trans }}"name ="ads_submit" class="btn btn-primary"></p>
+
+                                                    <p><div id="response"></div></p>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- End content -->
+
+                            </div>
+                            <div class="widget-foot">
+                                <!-- Footer goes here -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Matter ends -->
+
+</div>
+
+<!-- Mainbar ends -->
+<div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+{% endblock %}
+
+
+{% block sidebar %}
+    {% include "admin/layout/side.twig" %}
+{% endblock  %}

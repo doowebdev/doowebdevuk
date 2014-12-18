@@ -1,0 +1,107 @@
+{% extends "admin/layout/master.twig" %}
+
+{% block content %}
+    <!-- Main bar -->
+    <div class="mainbar">
+
+        <!-- Page heading -->
+        <div class="page-head">
+            <h2 class="pull-left"><i class="fa fa-home"></i> Portfolio</h2>
+
+            <div class="clearfix"></div>
+
+        </div>
+        <!-- Page heading ends -->
+
+
+        <!-- Matter -->
+
+        <div class="matter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        {{ flash['page_created'] }}
+                        {{ flash['page_updated'] }}
+                        {{ flash['deleted'] }}
+
+                        <div class="widget">
+                            <div class="widget-head">
+                                <div class="pull-left">All Portfolio Items </div>
+                                <div class="widget-icons pull-right">
+                                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                                    <!--<a href="#" class="wclose"><i class="fa fa-times"></i></a>-->
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="widget-content">
+                                <div class="padd">
+                                    <!-- Content goes here -->
+
+                                    <!-- Table -->
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th width="100">ID</th>
+                                            <th width="150">Title</th>
+                                            <th width="100">Slug</th>
+                                            <th width="100">Order</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% if pages %}
+                                            <tr>
+                                            {% for page in pages %}
+    <tr>
+        <td>{{ page.id }}</td>
+        <td>{{ page.title }}</td>
+        <td>{{ page.slug }}</td>
+        <td>{{ page.oder }}</td>
+        <td>
+            <a href="{{ siteUrl('/admin-area/page/') }}{{ page.id }}/edit" class="btn btn-xs btn-default" role="button"><i class="fa fa-pencil"></i></a>
+            <a href="{{ siteUrl('/admin-area/page/') }}{{ page.id }}/delete" class="btn btn-xs btn-danger" role="button" onclick="return confirm('Are you sure?')"><i class="fa fa-trash-o"></i></a>
+        </td>
+    </tr>
+{% endfor %}
+
+                                            </tr>
+
+                                        {% else %}
+    <p><b>No pages to show</b></p>
+{% endif %}
+
+                                        </tbody>
+                                    </table>
+
+
+
+
+                                </div>
+                                <div class="widget-foot">
+                                    <!-- Footer goes here -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matter ends -->
+
+    </div>
+
+    <!-- Mainbar ends -->
+    <div class="clearfix"></div>
+
+    </div>
+    <!-- Content ends -->
+{% endblock %}
+
+
+{% block sidebar %}
+    {% include "admin/layout/side.twig" %}
+{% endblock  %}

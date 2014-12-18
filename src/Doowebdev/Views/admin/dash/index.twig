@@ -1,0 +1,125 @@
+{% extends "admin/layout/master.twig" %}
+
+{% block content %}
+
+    <!-- Main bar -->
+    <div class="mainbar">
+
+        <!-- Page heading -->
+        <div class="page-head">
+            <h2 class="pull-left"><i class="fa fa-tachometer"></i>{{ 'DASHBOARD_MENU'|trans }}</h2>
+
+            <div class="clearfix"></div>
+
+        </div>
+        <!-- Page heading ends -->
+
+
+        <!-- Matter -->
+
+        <div class="matter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="widget">
+                            <div class="widget-head">
+                                <div class="pull-left">{{ 'STATISTICS_TITLE'|trans }}</div>
+                                <div class="widget-icons pull-right">
+                                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                                    <!--<a href="#" class="wclose"><i class="fa fa-times"></i></a>-->
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="widget-content">
+                                <div class="padd">
+                                    <!-- Content goes here -->
+
+                                    <div id="userChart"></div>
+
+                                   <div id="videoChart"></div>
+
+
+                                </div>
+                                <div class="widget-foot">
+                                    <!-- Footer goes here -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matter ends -->
+
+    </div>
+
+    <!-- Mainbar ends -->
+    <div class="clearfix"></div>
+
+    </div>
+    <!-- Content ends -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script><!-- Google charts -->
+    <script>
+        var site_url = "{{ url('home') }}";
+    </script>
+    <script>
+
+        google.load('visualization', '1.0', {'packages':['corechart'] });
+
+        function drawUserChart(){
+
+            var json = $.ajax({
+                url: site_url+'api/user_stats',
+                dataType: 'json',
+                async: false
+
+            }).responseText;
+
+            var data = new google.visualization.DataTable(json);
+
+            var options = {'title':'User Statistics'};
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('userChart'));
+
+            chart.draw(data, options);
+
+        }
+
+        google.setOnLoadCallback(drawUserChart);
+    </script>
+
+    <script>
+
+        google.load('visualization', '1.0', {'packages':['corechart'] });
+
+        function drawVideoChart(){
+
+            var json = $.ajax({
+                url: site_url+'api/video_stats',
+                dataType: 'json',
+                async: false
+
+            }).responseText;
+
+            var data = new google.visualization.DataTable(json);
+
+            var options = {'title':'Video Statistics'};
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('videoChart'));
+
+            chart.draw(data, options);
+
+        }
+
+        google.setOnLoadCallback(drawVideoChart);
+    </script>
+
+
+{% endblock %}
+
+ {% block sidebar %}
+      {% include "admin/layout/side.twig" %}
+ {% endblock  %}

@@ -1,0 +1,51 @@
+{
+  "name": "doowebdev/doowebdev",
+  "description": "Doowebdev Framework.",
+  "homepage": "https://github.com/doowebdev/doowebdev",
+  "keywords": [
+    "framework"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Freddie Annobil",
+      "homepage": "http://doowebdev.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "symfony/translation": "~2.3",
+    "symfony/config": "~2.3",
+    "symfony/validator": "~2.3",
+    "symfony/locale": "~2.3",
+    "symfony/twig-bridge": "~2.3",
+    "silex/silex": "~1.2.2",
+    "twig/twig": "~1.16.2",
+    "bitolaco/silex-eloquent": "~0.1.1",
+    "desarrolla2/cache": "~1.8.0",
+    "cartalyst/sentry": "~2.1.4",
+    "ircmaxell/password-compat": "~1.0.4",
+    "swiftmailer/swiftmailer": "5.2.1",
+    "doowebdev/doo-pagination": "1.*",
+    "symfony/browser-kit": ">=2.3,<2.4-dev",
+    "symfony/css-selector": ">=2.3,<2.4-dev",
+    "halilim/xml-iterator": "dev-master",
+    "suin/php-rss-writer": ">=1.0",
+    "evert/sitemap-php": "dev-master",
+    "recaptcha/php5": "dev-master"
+
+  },
+
+  "autoload": {
+
+    "psr-4": {
+      "Doowebdev\\": "src/Doowebdev",
+      "Doowebdev\\Core\\": "app/core"
+    }
+  },
+
+  "minimum-stability": "dev",
+  "prefer-stable": true
+
+}

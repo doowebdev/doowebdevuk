@@ -1,0 +1,102 @@
+{% extends "admin/layout/master.twig" %}
+
+{% block content %}
+
+    <!-- Main bar -->
+    <div class="mainbar">
+
+        <!-- Page heading -->
+        <div class="page-head">
+            <h2 class="pull-left"><i class="fa fa-home"></i> Commission Junction</h2>
+
+            <div class="clearfix"></div>
+
+        </div>
+        <!-- Page heading ends -->
+
+
+        <!-- Matter -->
+
+        <div class="matter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        {{ flash['upload-xml-msg'] }}
+                        {{ flash['inserted-items-msg'] }}
+
+                        <div class="widget">
+                            <div class="widget-head">
+                                <div class="pull-left">Commission Junction API Setting</div>
+                                <div class="widget-icons pull-right">
+                                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                                    <!--<a href="#" class="wclose"><i class="fa fa-times"></i></a>-->
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="widget-content">
+                                <div class="padd">
+
+
+                                    <div class="row">
+                                     <div class="col-lg-12">
+                                    <!-- IMPORT ITEMS -->
+
+                                    <form class="ajax-cj-settings form-horizontal" method="post" action="{{ siteUrl('/admin-area/cj-settings') }}">
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">API Key:</label>
+                                            <div class="col-lg-5">
+                                                <textarea class="form-control" name="api_key" cols="30" rows="10">{%  if  cj_setting.api_key %}{{  cj_setting.api_key }}{% endif %}</textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Website ID:</label>
+                                            <div class="col-lg-5">
+                                                <input class="form-control" type="text" name ="website_id" value ="{%  if  cj_setting.website_id %}{{  cj_setting.website_id }}{% endif %}">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label"></label>
+                                            <div class="col-lg-5">
+                                                <input type="submit" name="upload_xml_submit" value="Submit" class="btn btn-primary">
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="token" value="{{ token }}">
+                                    </form>
+                                    <div id="response"></div>
+                                    <!-- END IMPORT ITEMS -->
+                                    </div>
+                                    </div>
+                                    <p></p>
+
+                                </div>
+                                <div class="widget-foot">
+                                    <!-- Footer goes here -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matter ends -->
+
+    </div>
+
+    <!-- Mainbar ends -->
+    <div class="clearfix"></div>
+
+    </div>
+    <!-- Content ends -->
+
+{% endblock %}
+
+
+{% block sidebar %}
+    {% include "admin/layout/side.twig" %}
+{% endblock  %}

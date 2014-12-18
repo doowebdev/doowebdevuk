@@ -1,0 +1,127 @@
+{% extends "admin/layout/master.twig" %}
+
+{% block content %}
+<!-- Main bar -->
+<div class="mainbar">
+
+    <!-- Page heading -->
+    <div class="page-head">
+        <h2 class="pull-left"><i class="fa fa-home"></i> {{ 'GENERAL_SETTINGS'|trans }}</h2>
+
+        <div class="clearfix"></div>
+
+    </div>
+    <!-- Page heading ends -->
+
+
+    <!-- Matter -->
+
+    <div class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    {% if settingsMsg %}
+                        {% for msg in  settingsMsg %}
+                            {{ msg.content }}
+                        {% endfor %}
+                    {% endif %}
+
+                    {% for formMsg in adminFormErrorMessages %}
+                        <ul>
+                            {% if formMsg.site_title %}<li>{{ formMsg.site_title }}</li>{% endif %}
+                            {% if formMsg.site_url %}<li>{{ formMsg.site_url }}</li>{% endif %}
+                        </ul>
+                    {% endfor %}
+
+                    <div class="widget">
+                        <div class="widget-head">
+                            <div class="pull-left">{{ 'SETTINGS'|trans }}</div>
+                            <div class="widget-icons pull-right">
+                                <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                                <!--<a href="#" class="wclose"><i class="fa fa-times"></i></a>-->
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="widget-content">
+                            <div class="padd">
+
+                                <!-- Content -->
+                                <div class="widget-content">
+                                    <div class="padd">
+
+                                        <br />
+                                        <!-- Form starts.  -->
+                                        <form class="admin-ajax form-horizontal" role="form" action="{{ url('home') }}admin-area/put-settings" method ="post">
+
+                                            <input type="hidden" name="id" value="1"/>
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">{{ 'SITE_TITLE'|trans }}</label>
+                                                <div class="col-lg-5">
+                                                    <input class="form-control" type="text" name ="site_title" value ="{% if settings.site_title %}{{ settings.site_title }}{% endif %}">
+
+                                                </div>
+                                            </div>
+
+                                             <div class="form-group">
+                                                <label class="col-lg-2 control-label">{{ 'SENT_FROM_EMAIL'|trans }}</label>
+                                                <div class="col-lg-5">
+                                                    <input class="form-control" type="text" name ="sentFromEmail" value ="{% if settings.sentFromEmail %}{{ settings.sentFromEmail }}{% endif %}">
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">{{ 'FOOTER_TEXT'|trans }}</label>
+                                                <div class="col-lg-5">
+                                                    <input class="form-control" type="text" name ="footer_text" value ="{% if settings.footer_text %}{{ settings.footer_text }}{% endif %}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">{{ 'SITE_URL'|trans }}</label>
+                                                <div class="col-lg-5">
+                                                    <input class="form-control" type="text" id="right-label" name ="site_url" value ="{% if settings.site_url %}{{ settings.site_url }}{% endif %}">
+
+                                                    <p><input type="submit" value ="Submit" name ="settings_submit" class="btn btn-primary"></p>
+
+                                                    <p><div id="response"></div></p>
+
+                                                </div>
+                                            </div>
+
+                                            <input type="hidden" name="token" value="{{ token }}">
+
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- End content -->
+
+                            </div>
+                            <div class="widget-foot">
+                                <!-- Footer goes here -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Matter ends -->
+
+</div>
+
+<!-- Mainbar ends -->
+<div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+{% endblock %}
+
+ {% block sidebar %}
+     {% include "admin/layout/side.twig" %}
+ {% endblock  %}

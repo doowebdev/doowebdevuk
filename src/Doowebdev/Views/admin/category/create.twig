@@ -1,0 +1,85 @@
+{% extends "admin/layout/master.twig" %}
+
+{% block content %}
+
+    <!-- Main bar -->
+    <div class="mainbar">
+
+        <!-- Page heading -->
+        <div class="page-head">
+            <h2 class="pull-left"><i class="fa fa-home"></i> Videos</h2>
+
+            <div class="clearfix"></div>
+
+        </div>
+        <!-- Page heading ends -->
+
+
+        <!-- Matter -->
+
+        <div class="matter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="widget">
+                            <div class="widget-head">
+                                <div class="pull-left">Add Category</div>
+                                <div class="widget-icons pull-right">
+                                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                                    <!--<a href="#" class="wclose"><i class="fa fa-times"></i></a>-->
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="widget-content">
+                                <div class="padd">
+
+                                    <br />
+                                    <!-- Form starts.  -->
+                                    <form class="form-horizontal" role="form" action="{{ siteUrl('/admin-area/category') }}" method ="post">
+
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">Category:</label>
+                                            <div class="col-lg-5">
+                                                <input type="text" name ="category" class="form-control">
+                                                <input type="hidden" name="token" value="{{ token }}">
+                                                <p><input type="submit" value ="Create" name ="submit-category" class="btn btn-primary"></p>
+                                                {{ category_errors }}
+                                            </div>
+                                        </div>
+
+
+                                    </form>
+
+
+
+
+                                </div>
+                                <div class="widget-foot">
+                                    <!-- Footer goes here -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matter ends -->
+
+    </div>
+
+    <!-- Mainbar ends -->
+    <div class="clearfix"></div>
+
+    </div>
+    <!-- Content ends -->
+
+{% endblock %}
+
+
+{% block sidebar %}
+    {% include "admin/layout/side.twig" %}
+{% endblock  %}

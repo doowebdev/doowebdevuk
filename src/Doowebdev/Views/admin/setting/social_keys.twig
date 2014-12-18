@@ -1,0 +1,133 @@
+{% extends "admin/layout/master.twig" %}
+
+{% block content %}
+<!-- Main bar -->
+<div class="mainbar">
+
+    <!-- Page heading -->
+    <div class="page-head">
+        <h2 class="pull-left"><i class="fa fa-home"></i> Settings</h2>
+
+        <div class="clearfix"></div>
+
+    </div>
+    <!-- Page heading ends -->
+
+
+    <!-- Matter -->
+
+    <div class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                   {% if socialKeyMsg %}
+                        {% for msg in socialKeyMsg %}
+                            {{ msg.content }}
+                        {% endfor %}
+                    {% endif %}
+
+                    {% for formMsg in adminFormErrorMessages %}
+                        <ul>
+                            {% if formMsg.facebook_app_id %}<li>{{ formMsg.facebook_app_id }}</li>{% endif %}
+                            {% if formMsg.facebook_secret_key %}<li>{{ formMsg.facebook_secret_key }}</li>{% endif %}
+                            {% if formMsg.twitter_app_id %}<li>{{ formMsg.twitter_app_id }}</li>{% endif %}
+                            {% if formMsg.twitter_secret_key %}<li>{{ formMsg.twitter_secret_key }}</li>{% endif %}
+                        </ul>
+                    {% endfor %}
+
+
+
+                    <div class="widget">
+                        <div class="widget-head">
+                            <div class="pull-left">Social Media API Keys</div>
+                            <div class="widget-icons pull-right">
+                                <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                                <!--<a href="#" class="wclose"><i class="fa fa-times"></i></a>-->
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="widget-content">
+                            <div class="padd">
+
+                                <!-- Content -->
+                                <div class="widget-content">
+                                    <div class="padd">
+
+                                        <!-- Form starts.  -->
+                                        <form class="admin-ajax form-horizontal" role="form" action="{{ url('socialKey') }}" method ="post">
+
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">Facebook APP ID:</label>
+                                                <div class="col-lg-5">
+                                                    <input class="form-control" type="text" name ="facebook_app_id" value ="{% if social_key.facebook_public_key %}{{ social_key.facebook_public_key }}{% endif %}">
+
+                                                   <!-- <p></p>
+
+                                                    <p><input type="submit" value ="Submit" name ="social-keys_submit" class="btn btn-primary"></p>-->
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">Facebook Secret:</label>
+                                                <div class="col-lg-5">
+                                                    <input class="form-control" type="text" name ="facebook_secret_key" value ="{% if social_key.facebook_secret_key %}{{ social_key.facebook_secret_key }}{% endif %}">
+
+                                                    <p></p>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">Twitter ID:</label>
+                                                <div class="col-lg-5">
+                                                    <input class="form-control" type="text" name ="twitter_app_id" value ="{% if social_key.twitter_public_key %}{{ social_key.twitter_public_key }}{% endif %}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-lg-2 control-label">Twitter Secret:</label>
+                                                <div class="col-lg-5">
+                                                    <input class="form-control" type="text" name ="twitter_secret_key" value ="{% if social_key.twitter_secret_key %}{{ social_key.twitter_secret_key }}{% endif %}">
+
+                                                    <p></p>
+
+                                                    <p><input type="submit" value ="Submit" name ="social-keys_submit" class="btn btn-primary"></p>
+
+                                                </div>
+                                            </div>
+
+                                            <input type="hidden" name="token" value="{{ token }}>">
+
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- End content -->
+
+                            </div>
+                            <div class="widget-foot">
+                                <!-- Footer goes here -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Matter ends -->
+
+</div>
+
+<!-- Mainbar ends -->
+<div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+{% endblock %}
+
+{% block sidebar %}
+    {% include "admin/layout/side.twig" %}
+{% endblock  %}
