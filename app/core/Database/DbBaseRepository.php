@@ -64,19 +64,19 @@ abstract class DbBaseRepository implements DbBaseRepositoryInterface{
     public function takeWhere( $field, $value, $take )
     {
         $takeWhere = $this->model->where( $field, '=', $value )->take( $take )->orderBy('created_at','desc')->get();
-        return $this->cache( 'takeWhere'.$field, $takeWhere );
+        return $this->cache( 'takeWhere', $takeWhere );
     }
 
     public function take( $take )
     {
         $take1 = $this->model->orderBy('created_at','desc')->take( $take )->get();
-        return $this->cache( 'take'.$take, $take1 );
+        return $this->cache( 'take1', $take1 );
     }
 
     public function findWhereId( $id )
     {
        $findWhereId = $this->model->where( 'status', 'active' )->orderBy('created_at','desc')->find( $id );
-        return $this->cache( 'findWhereId'.$id, $findWhereId );
+        return $this->cache( 'findWhereId', $findWhereId );
     }
 
     public function whereFirst( $field, $value )// used by next/prev etc..
@@ -126,7 +126,7 @@ abstract class DbBaseRepository implements DbBaseRepositoryInterface{
     public function whereDesc( $field, $value )
     {
         $whereDesc = $this->model->where( $field, '=', $value )->orderBy('created_at', 'desc')->get();
-        return $this->cache( 'where'.$value, $whereDesc );
+        return $this->cache( 'whereDesc', $whereDesc );
     }
 
     public function rssDesc()
@@ -249,21 +249,21 @@ abstract class DbBaseRepository implements DbBaseRepositoryInterface{
     {
 
         $withAll = $this->model->with( $with )->where( $field, $value )->first();
-        return $this->cache( 'withAll'.$with, $withAll );
+        return $this->cache( 'withAll', $withAll );
     }
 
     public function withWhereWhere( $with, $field, $value, $field2, $value2 )
     {
 
         $withAll = $this->model->with( $with )->where( $field, $value )->where( $field2, $value2 )->first();
-        return $this->cache( 'withAll'.$with, $withAll );
+        return $this->cache( 'withAll', $withAll );
     }
 
     public function withFirst( $with, $field, $value )
     {
 
         $withAll = $this->model->with( $with )->where( $field, $value )->first();
-        return $this->cache( 'withAll'.$with, $withAll );
+        return $this->cache( 'withAll', $withAll );
     }
 
 
