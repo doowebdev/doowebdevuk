@@ -16,7 +16,7 @@ class User_Stat extends Model
         'count'
     );
 
-    public static function get_formatted_users()
+    public static function getFormattedUsers()
     {
         $users = self::all();
 

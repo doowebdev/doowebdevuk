@@ -57,7 +57,6 @@ abstract class DbBaseRepository implements DbBaseRepositoryInterface{
 
     public function find($id)
     {
-        // TODO: Implement find() method.
         return 'find by id - base repo';
     }
 
@@ -99,14 +98,12 @@ abstract class DbBaseRepository implements DbBaseRepositoryInterface{
 
     public function countWhereWhere( $field, $value, $field2, $value2 )
     {
-        //Video::where( 'category', '=', $clean_category )->where('status', '=', 'active')->count();
         $countWhereWhere = $this->model->where( $field, $value )->where( $field2, $value2 )->count();
         return $this->cache( 'countWhereWhere', $countWhereWhere );
     }
 
     public function whereWhereFirst( $field, $value, $field2, $value2 )
     {
-        //Video::where( 'category', '=', $clean_category )->where('status', '=', 'active')->count();
         $whereWhereFirst = $this->model->where( $field, $value )->where( $field2, $value2 )->first();
         return $this->cache( 'whereWhereFirst', $whereWhereFirst );
     }
@@ -165,8 +162,6 @@ abstract class DbBaseRepository implements DbBaseRepositoryInterface{
     {
         if( ! count( $check ) )
         {
-            //insert into database
-         //   echo $flash_msg_name.' created.';
             return $this->model->create($createArray);
         }
         else
@@ -265,10 +260,5 @@ abstract class DbBaseRepository implements DbBaseRepositoryInterface{
         $withAll = $this->model->with( $with )->where( $field, $value )->first();
         return $this->cache( 'withAll', $withAll );
     }
-
-
-
-
-
 
 }

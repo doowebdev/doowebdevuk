@@ -15,9 +15,9 @@ class UserStatsDbRepository extends DbBaseRepository{
         $this->model = New User_Stat();
     }
 
-    public function google_chart_users()
+    public function googleChartUsers()
     {
-       return $this->model->get_formatted_users();
+       return $this->model->getFormattedUsers();
     }
 
 } 

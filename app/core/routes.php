@@ -16,7 +16,7 @@ $app->post('/'.$admin_area.'/login', "loginAdmin.controller:postLogin");
 $app->get('/'.$admin_area.'/dashboard', "dashboard.controller:index")->bind('dashboard');
 
 # Dashboard -  User Stats api
-$app->get('/api/user_stats', "dashboard.controller:user_stats");
+$app->get('/api/user_stats', "dashboard.controller:userStats");
 
 # Setting
 $app->get('/'.$admin_area.'/settings', "generalSettings.controller:show")->bind('generalSettings');

@@ -9,7 +9,7 @@
 namespace Doowebdev\Core\Sessions;
 
 
-use Doowebdev\Core\Sessions\CSRF\DooSilexCSRF;
+use Doowebdev\Core\Sessions\Csrf\DooSilexCsrf;
 use Silex\Application;
 use Silex\ServiceProviderInterface;
 
@@ -27,7 +27,7 @@ class DooSessionServiceProvider implements ServiceProviderInterface{
     {
         $app['doo-csrf'] = $app->share( function() {
 
-                return new DooSilexCSRF();
+                return new DooSilexCsrf();
             });
     }
 

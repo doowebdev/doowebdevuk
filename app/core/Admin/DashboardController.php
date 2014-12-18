@@ -22,7 +22,7 @@ class DashboardController extends Admin{
      */
     public function index()
     {
-        $this->general_user_stats();
+        $this->generalUserStats();
         return   $this->app['twig']->render(
             'admin/dash/index.twig',
             $this->data
@@ -32,15 +32,15 @@ class DashboardController extends Admin{
     /**
      * @return JsonResponse
      */
-    public function user_stats()//callback/send to google charts javascript
+    public function userStats()//callback/send to google charts javascript
     {
-       return  new JsonResponse($this->app['user_stats_db']->google_chart_users());
+       return  new JsonResponse($this->app['user_stats_db']->googleChartUsers());
     }
 
     /**
      * Create general_user_stats
      */
-    public function general_user_stats()
+    public function generalUserStats()
     {
 
         $total_users          = $this->app['users_db']->count();
@@ -63,7 +63,7 @@ class DashboardController extends Admin{
 
         foreach($user_stats as $name => $count )
         {
-            $user = $this->app['user_stats_db']->create(array(
+            $this->app['user_stats_db']->create(array(
                 'name' => $name,
                 'count' => $count
             ));
