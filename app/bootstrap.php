@@ -1,6 +1,6 @@
 <?php
 
-$bootFile = __DIR__.'/';
+$bootFile = __DIR__.'/';//base
 
 require $bootFile . 'core/App/app.php';
 
