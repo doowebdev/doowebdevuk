@@ -12,7 +12,7 @@ class SiteMapDbRepository extends DbBaseRepository{
 
     public function __construct()
     {
-        $this->model = New Site_Map();
+        $this->model = New SiteMap();
     }
 
 } 

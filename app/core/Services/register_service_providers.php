@@ -132,4 +132,3 @@ $app->register(new Doowebdev\Core\Authentication\AuthServiceProvider());
 */
     $app->register(new \Doowebdev\Core\Upload\UploadServiceProvider());
 
-

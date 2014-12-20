@@ -25,4 +25,4 @@ class SettingsInstallForm extends FormValidation{
         ]
 
     ];
-} 
+}

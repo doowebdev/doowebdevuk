@@ -21,7 +21,3 @@ $app['translator'] = $app->share( $app->extend('translator',
         return $translator;
 }));
 
-
-
-
-

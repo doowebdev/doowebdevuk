@@ -18,4 +18,4 @@ class Item extends Model
     );
 
 
-} 
+}

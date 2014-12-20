@@ -14,4 +14,4 @@ class ProfileDbRepository extends DbBaseRepository{
     {
         $this->model = New Profile();
     }
-} 
+}

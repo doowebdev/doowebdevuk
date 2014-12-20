@@ -14,7 +14,4 @@ class Logo extends Model
         'file_name'
     );
 
-
-
-
-} 
+}

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace  Doowebdev\Core\Database\User_Stats;
+namespace  Doowebdev\Core\Database\UserStats;
 
 
 use  Doowebdev\Core\Database\DbBaseRepository;
@@ -12,7 +12,7 @@ class UserStatsDbRepository extends DbBaseRepository{
 
     public function __construct()
     {
-        $this->model = New User_Stat();
+        $this->model = New UserStat();
     }
 
     public function googleChartUsers()
@@ -20,4 +20,4 @@ class UserStatsDbRepository extends DbBaseRepository{
        return $this->model->getFormattedUsers();
     }
 
-} 
+}

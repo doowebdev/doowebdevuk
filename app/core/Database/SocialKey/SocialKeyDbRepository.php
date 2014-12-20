@@ -1,7 +1,7 @@
 <?php
 
 
-namespace  Doowebdev\Core\Database\Social_Key;
+namespace  Doowebdev\Core\Database\SocialKey;
 
 
 use  Doowebdev\Core\Database\DbBaseRepository;
@@ -12,7 +12,7 @@ class SocialKeyDbRepository extends DbBaseRepository{
 
     public function __construct()
     {
-        $this->model = new Social_Key();
+        $this->model = new SocialKey();
     }
 
-} 
+}

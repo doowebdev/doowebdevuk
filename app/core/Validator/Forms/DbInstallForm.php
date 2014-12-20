@@ -37,4 +37,4 @@ class DbInstallForm extends FormValidation{
 
     ];
 
-} 
+}

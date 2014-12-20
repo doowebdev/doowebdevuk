@@ -25,3 +25,4 @@ require $bootFile . 'services/services.php';
 require $bootFile . 'core/routes.php';
 
 require $bootFile.'config/routes.php';
+

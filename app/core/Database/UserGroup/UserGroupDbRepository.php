@@ -1,7 +1,7 @@
 <?php
 
 
-namespace  Doowebdev\Core\Database\User_Group;
+namespace  Doowebdev\Core\Database\UserGroup;
 
 
 use  Doowebdev\Core\Database\DbBaseRepository;
@@ -12,6 +12,6 @@ class UserGroupDbRepository extends DbBaseRepository{
 
     public function __construct()
     {
-        $this->model = New User_Group();
+        $this->model = New UserGroup();
     }
-} 
+}

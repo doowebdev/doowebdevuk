@@ -20,6 +20,4 @@ class Authentication extends Model
         'website_url'
     ];
 
-
-
-} 
+}

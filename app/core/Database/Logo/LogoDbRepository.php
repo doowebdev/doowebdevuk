@@ -14,4 +14,4 @@ class LogoDbRepository extends DbBaseRepository{
     {
         $this->model = New Logo();
     }
-} 
+}

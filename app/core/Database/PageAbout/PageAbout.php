@@ -1,11 +1,11 @@
 <?php
 
 
-namespace  Doowebdev\Core\Database\Page_About;
+namespace  Doowebdev\Core\Database\PageAbout;
 
 use \Illuminate\Database\Eloquent\Model;
 
-class Page_About extends Model
+class PageAbout extends Model
 {
     protected $table = 'page_about';
 
@@ -16,4 +16,4 @@ class Page_About extends Model
     );
 
 
-} 
+}

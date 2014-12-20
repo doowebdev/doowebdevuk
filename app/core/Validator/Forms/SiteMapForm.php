@@ -32,4 +32,4 @@ class SiteMapForm extends FormValidation{
 
     ];
 
-} 
+}

@@ -33,4 +33,4 @@ trait DooCache {
         return $cache->get( $tag );
     }
 
-} 
+}

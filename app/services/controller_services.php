@@ -17,4 +17,3 @@
         return new Doowebdev\Controllers\PostController( $app );
     });
 
-

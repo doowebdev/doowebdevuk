@@ -1,11 +1,11 @@
 <?php
 
 
-namespace  Doowebdev\Core\Database\Social_Username;
+namespace  Doowebdev\Core\Database\SocialUsername;
 
 use \Illuminate\Database\Eloquent\Model;
 
-class Social_Username extends Model
+class SocialUsername extends Model
 {
 
     protected $table = 'social_media_username';
@@ -17,4 +17,4 @@ class Social_Username extends Model
         'gplus_user'
     );
 
-} 
+}

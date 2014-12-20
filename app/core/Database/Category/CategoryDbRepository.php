@@ -26,4 +26,4 @@ class CategoryDbRepository extends DbBaseRepository{
         $getCategories = $this->model->orderBy('category','asc')->get();
         return $this->cache( 'getCategories', $getCategories );
     }
-} 
+}

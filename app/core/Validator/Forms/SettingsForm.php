@@ -25,4 +25,4 @@ class SettingsForm extends FormValidation{
 
     ];
 
-} 
+}

@@ -20,9 +20,4 @@ class UserDbRepository extends DbBaseRepository{
        return User::findOrFail( $id )->favorites;
     }
 
-
-
-
-
-
-} 
+}

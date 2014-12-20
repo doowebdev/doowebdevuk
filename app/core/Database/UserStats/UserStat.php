@@ -1,12 +1,12 @@
 <?php
 
 
-namespace  Doowebdev\Core\Database\User_Stats;
+namespace  Doowebdev\Core\Database\UserStats;
 
 use \Illuminate\Database\Eloquent\Model;
 
 
-class User_Stat extends Model
+class UserStat extends Model
 {
     protected $table = 'user_stats';
 
@@ -37,4 +37,4 @@ class User_Stat extends Model
         return $json;
     }
 
-} 
+}

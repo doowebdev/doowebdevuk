@@ -1,11 +1,11 @@
 <?php
 
 
-namespace  Doowebdev\Core\Database\User_Group;
+namespace  Doowebdev\Core\Database\UserGroup;
 
 use \Illuminate\Database\Eloquent\Model;
 
-class User_Group extends Model
+class UserGroup extends Model
 {
     protected $table = 'users_groups';
 
@@ -14,4 +14,4 @@ class User_Group extends Model
         'user_id',
         'group_id'
     );
-} 
+}

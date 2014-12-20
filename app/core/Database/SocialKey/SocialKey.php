@@ -1,12 +1,12 @@
 <?php
 
 
-namespace  Doowebdev\Core\Database\Social_Key;
+namespace  Doowebdev\Core\Database\SocialKey;
 
 use \Illuminate\Database\Eloquent\Model;
 
 
-class Social_Key extends Model
+class SocialKey extends Model
 {
     protected $table = 'social_media_keys';
 
@@ -17,4 +17,4 @@ class Social_Key extends Model
         'twitter_public_key',
         'twitter_secret_key'
     );
-} 
+}

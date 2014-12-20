@@ -16,4 +16,4 @@ class Page extends Model
     );
 
 
-} 
+}

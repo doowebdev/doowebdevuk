@@ -1,7 +1,7 @@
 <?php
 
 
-namespace  Doowebdev\Core\Database\Site_Metas;
+namespace  Doowebdev\Core\Database\SiteMeta;
 
 
 use  Doowebdev\Core\Database\DbBaseRepository;
@@ -12,7 +12,7 @@ class SiteMetaDbRepository extends  DbBaseRepository{
 
     public function __construct()
     {
-        $this->model = New Site_Meta();
+        $this->model = New SiteMeta();
     }
 
-} 
+}

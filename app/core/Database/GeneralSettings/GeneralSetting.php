@@ -6,7 +6,7 @@ namespace  Doowebdev\Core\Database\GeneralSettings;
 use \Illuminate\Database\Eloquent\Model;
 
 
-class General_Setting extends Model{
+class GeneralSetting extends Model{
 
     protected $table = 'general_settings';
 
@@ -18,6 +18,4 @@ class General_Setting extends Model{
         'popular_video_views'
     );
 
-
-
-} 
+}

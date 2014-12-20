@@ -1,12 +1,12 @@
 <?php
 
 
-namespace  Doowebdev\Core\Database\Site_Metas;
+namespace  Doowebdev\Core\Database\SiteMeta;
 
 use \Illuminate\Database\Eloquent\Model;
 
 
-class Site_Meta extends Model
+class SiteMeta extends Model
 {
 
     protected $table = 'site_metas';
@@ -18,6 +18,4 @@ class Site_Meta extends Model
         'keywords'
     );
 
-
-
-} 
+}

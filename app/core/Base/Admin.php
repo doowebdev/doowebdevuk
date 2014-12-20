@@ -25,7 +25,7 @@ abstract class Admin extends Controller{
     {
         parent::__construct($app);
 
-        $this->admin_authenticate();
+        $this->adminAuthenticate();
 
         $this->data['settings']                = $app['general_setting_db']->whereFirst('id',1 );//sticky
         $this->data['siteMetaDetails']         = $app['site_meta_db']->whereFirst('id',1);
@@ -39,7 +39,7 @@ abstract class Admin extends Controller{
     {
         if ( $this->app['auth']->check() )
         {
-            $this->admin_authenticate();
+            $this->adminAuthenticate();
         }
 
         return $this->app->redirect( $this->app['url_generator']->generate('login') );
@@ -50,7 +50,7 @@ abstract class Admin extends Controller{
     /**
      * @return string|\Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function admin_authenticate()
+    public function adminAuthenticate()
     {
         $get_user = $this->app['auth']->getUser();
 

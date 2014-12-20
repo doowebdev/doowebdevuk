@@ -6,7 +6,7 @@ namespace  Doowebdev\Core\Database\SiteMap;
 use \Illuminate\Database\Eloquent\Model;
 
 
-class Site_Map extends Model
+class SiteMap extends Model
 {
     protected $table = 'sitemap_settings';
 
@@ -15,4 +15,4 @@ class Site_Map extends Model
         'priority',
         'freqency'
     );
-} 
+}

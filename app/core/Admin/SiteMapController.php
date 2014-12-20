@@ -58,15 +58,15 @@ class SiteMapController extends Admin{
             foreach ($items as $item)
             {
                 //single item url to be show on site map
-                $sitemap->addItem('/s/' .$item->id.'/'.$item['seoName'], $this->_item_sitemap_priority(),
-                    $this->_item_sitemap_frequency(), 'Today');
+                $sitemap->addItem('/s/' .$item->id.'/'.$item['seoName'], $this->itemSitemapPriority(),
+                    $this->itemSitemapFrequency(), 'Today');
             }
 
             $pages = $this->app['page_db']->getAll();
             foreach ( $pages as $page )
             {
-                $sitemap->addItem('/p/' .$page['slug'], $this->_page_sitemap_priority(),
-                    $this->_page_sitemap_frequency(), 'Today');
+                $sitemap->addItem('/p/' .$page['slug'], $this->pageSitemapPriority(),
+                    $this->pageSitemapFrequency(), 'Today');
             }
 
             $sitemap->createSitemapIndex( $this->app['url_generator']->generate('home').'/app/storage/sitemap/', 'Today');
@@ -109,7 +109,7 @@ class SiteMapController extends Admin{
     /**
      * @return mixed
      */
-    private function _item_sitemap_priority()
+    private function itemSitemapPriority()
     {
         $result   = $this->app['site_map_db']->whereFirst('id',1);
         return $result['priority'];
@@ -118,7 +118,7 @@ class SiteMapController extends Admin{
     /**
      * @return mixed
      */
-    private function _item_sitemap_frequency()
+    private function itemSitemapFrequency()
     {
         $result   = $this->app['site_map_db']->whereFirst('id',1);
         return $result['freqency'];
@@ -127,7 +127,7 @@ class SiteMapController extends Admin{
     /**
      * @return mixed
      */
-    private function _page_sitemap_priority()
+    private function pageSitemapPriority()
     {
         $result   = $this->app['site_map_db']->whereFirst('id',2);
         return $result['priority'];
@@ -136,7 +136,7 @@ class SiteMapController extends Admin{
     /**
      * @return mixed
      */
-    private function _page_sitemap_frequency()
+    private function pageSitemapFrequency()
     {
         $result   = $this->app['site_map_db']->whereFirst('id',2);
         return $result['freqency'];

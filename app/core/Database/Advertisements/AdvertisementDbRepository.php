@@ -24,4 +24,4 @@ class AdvertisementDbRepository  extends DbBaseRepository{
 
     //public function createOrUpdate($if, $flash_msg_name, array $createArray, array $updateArray, $updateId)
 
-} 
+}

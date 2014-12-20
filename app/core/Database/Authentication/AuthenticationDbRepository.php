@@ -14,6 +14,4 @@ class AuthenticationDbRepository extends DbBaseRepository{
         $this->model = New Authentication();
     }
 
-
-
-} 
+}

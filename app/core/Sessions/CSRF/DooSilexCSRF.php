@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: freddie
- * Date: 08/12/2014
- * Time: 19:35
- */
+
 
 namespace Doowebdev\Core\Sessions\Csrf;
 
@@ -30,7 +25,7 @@ class DooSilexCsrf {
     }
 
     /**
-     * Get token for CSRF
+     * Get token for Csrf
      * @return mixed
      */
     public function getToken()
@@ -54,7 +49,6 @@ class DooSilexCsrf {
      */
     public function setSession($name, $value)
     {
-        //$this->session->set( $name,$value );
         if( isset( $name ) )
         {
              $this->session->set( $name,$value );
@@ -81,7 +75,7 @@ class DooSilexCsrf {
     public function getSession( $name )
     {
         $session = $this->session->get( $name );
-        //return $this->session->get( $name );
+
         if( isset( $session ) )
         {
             return $session;

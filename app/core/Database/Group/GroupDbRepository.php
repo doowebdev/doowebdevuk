@@ -14,4 +14,4 @@ class GroupDbRepository extends DbBaseRepository{
     {
         $this->model = New Group();
     }
-} 
+}

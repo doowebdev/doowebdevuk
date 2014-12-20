@@ -1,7 +1,7 @@
 <?php
 
 
-namespace  Doowebdev\Core\Database\Social_Username;
+namespace  Doowebdev\Core\Database\SocialUsername;
 
 
 use  Doowebdev\Core\Database\DbBaseRepository;
@@ -12,6 +12,6 @@ class SocialUsernameDbRepository extends DbBaseRepository{
 
     public function __construct()
     {
-        $this->model = new Social_Username();
+        $this->model = new SocialUsername();
     }
-} 
+}

@@ -13,7 +13,7 @@ class GeneralSettingDbRepository extends DbBaseRepository{
 
     public function __construct()
     {
-        $this->model = New General_Setting();
+        $this->model = New GeneralSetting();
     }
 
-} 
+}

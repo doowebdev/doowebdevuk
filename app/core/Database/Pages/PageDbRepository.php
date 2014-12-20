@@ -13,4 +13,4 @@ class PageDbRepository extends DbBaseRepository{
     {
         $this->model = New Page();
     }
-} 
+}
