@@ -46,4 +46,4 @@ interface DbBaseRepositoryInterface {
     public function previousWhere( $field, $field, $strtotime );
     public function nextWhere( $field, $field,  $strtotime );
 
-} 
+}

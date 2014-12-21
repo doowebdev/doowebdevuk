@@ -80,3 +80,4 @@ $app['latest_items_side'] = 5;
 */
 
 $app['theme'] = 'default';
+

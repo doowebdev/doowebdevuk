@@ -55,25 +55,6 @@ $app->get('/'.$admin_area.'/page/{id}/edit', "page.controller:edit")->bind('edit
 $app->put('/'.$admin_area.'/page/{id}', "page.controller:update")->bind('updatePage');
 $app->get('/'.$admin_area.'/page/{id}/delete', "page.controller:delete")->bind('deletePage');
 
-/*
-    # Pages
-    \Route::get('/pages','Doowebdev\Admin\PageController:index' );
-    \Route::get('/page','Doowebdev\Admin\PageController:create' );
-    \Route::post('/page','Doowebdev\Admin\PageController:store' );
-    \Route::get('/page/:id/edit','Doowebdev\Admin\PageController:edit' );
-    \Route::put('/page/:id','Doowebdev\Admin\PageController:update' );
-    \Route::get('/page/:id/delete','Doowebdev\Admin\PageController:delete' );
-
-    # Users
-    \Route::get('/users','Doowebdev\Admin\UserController:index' );
-    \Route::get('/user','Doowebdev\Admin\UserController:create' );
-    \Route::post('/user','Doowebdev\Admin\UserController:store' );
-    \Route::get('/user/:id/edit','Doowebdev\Admin\UserController:edit' );
-    \Route::put('/user/:id/edit','Doowebdev\Admin\UserController:update' );
-    \Route::get('/user/:id/delete','Doowebdev\Admin\UserController:delete' );
- *
- */
-
 
 
 
